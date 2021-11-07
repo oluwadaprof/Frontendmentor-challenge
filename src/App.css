@@ -35,10 +35,12 @@ body {
     left: -18rem;
 }
 
+a,
 li {
     list-style: none;
     display: inline;
     color: gray;
+    text-decoration: none;
 }
 
 .avatar {
@@ -55,6 +57,7 @@ li {
     top: -1.4rem;
     width: 1.2rem;
     height: 1.2rem;
+    cursor: pointer;
 }
 
 .tag {
@@ -92,16 +95,24 @@ li {
     height: .2rem;
     background: orangered;
     z-index: 3;
+    opacity: 0.75;
+    transition: 300ms;
+    display: none;
 }
 
-.nav-active1 {
-    top: 6rem;
-    left: 26rem;
+
+/* .nav-active::before {
+    transition: 300ms;
+    height: 5px;
+    content: "";
     position: absolute;
-    width: 6rem;
-    height: .2rem;
-    background: orangered;
-    z-index: 3;
+    background-color: #a6b6cf;
+    opacity: 1;
+} */
+
+a:hover {
+    color: orangered;
+    opacity: 1;
 }
 
 
@@ -117,12 +128,34 @@ section {
     flex-direction: row;
 }
 
+@keyframes fadeup {
+    0% {
+        transform: translateY(4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadedown {
+    100% {
+        transform: translateY(-4rem);
+    }
+    0% {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+
 .hero-image {
     margin-top: 3rem;
     height: 23rem;
     width: 27rem;
     padding: 0;
     border-radius: 5px;
+    transition: 300ms;
+    animation: fadeup 3s;
 }
 
 .sub-image-list {
@@ -140,11 +173,14 @@ section {
     width: 5.2rem;
     border-radius: 5px;
     flex-grow: 1;
+    animation: fadeup 3s;
 }
 
 .sub-image:hover {
     border: 1px solid orangered 5px;
     cursor: pointer;
+    animation: grow .5s forwards;
+    animation-delay: .5s;
 }
 
 
@@ -153,6 +189,7 @@ section {
 .second-section {
     position: relative;
     left: 6rem;
+    animation: fadedown 3s;
 }
 
 h2 {
@@ -233,6 +270,7 @@ h5 {
     border-bottom-left-radius: 4px;
     border-top-left-radius: 4px;
     padding-right: 1rem;
+    cursor: pointer;
 }
 
 .plus {
@@ -263,6 +301,7 @@ h5 {
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
     font-weight: bolder;
+    cursor: pointer;
 }
 
 .minus {
@@ -271,6 +310,7 @@ h5 {
     top: -.2rem;
     color: orangered;
     font-weight: bolder;
+    cursor: pointer;
 }
 
 .cart-btn {
@@ -287,9 +327,6 @@ h5 {
     padding-top: .6rem;
     padding-left: 6.1rem;
     z-index: 0;
-}
-
-.cart-btn:hover {
     cursor: pointer;
 }
 
@@ -301,18 +338,23 @@ h5 {
     color: white;
     cursor: pointer;
     font-weight: bolder;
+    cursor: pointer;
 }
 
 .cart-container {
     width: 20rem;
     height: 14rem;
     border-radius: 8px;
-    background: rgb(241, 238, 238);
-    box-shadow: rgb(58, 56, 56);
+    background: white;
+    box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
     z-index: 3;
     position: absolute;
     left: 61rem;
     top: 5.3rem;
+}
+
+.cart-icon {
+    cursor: pointer;
 }
 
 .cart-text {
@@ -322,9 +364,71 @@ h5 {
 .cart-divider {
     width: 19.5rem;
     margin-left: .3rem;
+    border: -.1px solid gray;
+}
+
+.checkout-btn {
+    margin-left: 4rem;
+    margin-top: -1rem;
+    width: 14rem;
+    height: 2.4rem;
+    background: orangered;
+    color: white;
+    border: none;
+    font-size: .9rem;
+    font-weight: bolder;
+    border-radius: 4px;
 }
 
 .empty-state {
     margin: 3.6rem 4.5rem 4.5rem 5.5rem;
     font-weight: bolder;
+    display: none;
+    color: gray;
+}
+
+
+/* cart-card */
+
+.cart-card {
+    width: 25rem;
+    height: 5rem;
+    margin-left: 1rem;
+    position: relative;
+    left: -2rem;
+    top: -1rem;
+}
+
+.first-card {
+    position: absolute;
+    top: .5rem;
+    left: 3rem;
+    width: 25rem;
+    padding: 0;
+    margin: 0;
+    transform: scale(0.9);
+}
+
+.delete-icon {
+    position: relative;
+    top: -4rem;
+    left: 14.3rem;
+    color: gray;
+}
+
+.card-text {
+    color: gray;
+}
+
+.card-thumbnail {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 2px;
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+}
+
+.bold-price {
+    font-weight: bolder;
+    color: black;
 }

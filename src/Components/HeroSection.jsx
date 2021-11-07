@@ -1,6 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import HeroImage from "../images/image-product-1.jpg";
+import HeroImage1 from '../images/image-product-2.jpg';
+import HeroImage2 from '../images/image-product-3.jpg';
+import HeroImage3 from '../images/image-product-4.jpg';
 import SubImageOne from '../images/image-product-1-thumbnail.jpg';
 import SubImageTwo from '../images/image-product-2-thumbnail.jpg';
 import SubImageThree from '../images/image-product-3-thumbnail.jpg';
@@ -12,6 +15,14 @@ import {  HiMinus } from "react-icons/hi";
 
 
 function HeroSection () {
+    const [thumbnail, setThumbnail] =useState(HeroImage);
+
+    // const HeroImageArray = [
+    //     HeroImage,HeroImage1, HeroImage2, HeroImage3
+    // ];
+    const SubImageArray = [
+        SubImageOne,SubImageTwo, SubImageThree, SubImageFour
+    ]
 
     const [count, setCount] = useState(0);
 
@@ -22,19 +33,17 @@ function HeroSection () {
     function MinusClick() {
         if (count >= 1){
             setCount(count - 1);
-        }
-        
+        } 
       }
 
     return(
         <section >
             <div className='first-section'>
-                <img className='hero-image' src={HeroImage} alt="" />
+               
+                <img className='hero-image' src={thumbnail} alt=""  />
                 <div className="sub-image-list" >
-                    <img className='sub-image' src={SubImageOne} alt="" />
-                    <img className='sub-image' src={SubImageTwo} alt="" />
-                    <img className='sub-image' src={SubImageThree} alt="" />
-                    <img className='sub-image' src={SubImageFour} alt="" />
+                {SubImageArray.map((i)=> <img className='sub-image' src={i} alt=""  onClick={()=>setThumbnail(i)}/> )}
+                  
                 </div>
             </div>
             <div className='second-section'>
