@@ -95,10 +95,19 @@ li {
     height: .2rem;
     background: orangered;
     z-index: 3;
-    opacity: 0.75;
-    transition: 300ms;
-    display: none;
 }
+
+
+/* 
+.active-one {
+    top: 9rem;
+    left: 21.6rem;
+    position: absolute;
+    width: 6rem;
+    height: .2rem;
+    background: orangered;
+    z-index: 4;
+} */
 
 
 /* .nav-active::before {
@@ -432,3 +441,8 @@ h5 {
     font-weight: bolder;
     color: black;
 }
+
+
+/* @media screen (min-width: 990px;) {  
+    
+} */

@@ -10,26 +10,28 @@ import {NavLink} from 'react-router-dom'
 
 function NavBar () {
 
-    // ('.nav-link').on('click', function() {
-    //     ('.active-link').removeClass('active-link');
-    //     (this).addClass('active-link');
-    // });
 
     const [showCart, setShowCart] = useState(false);
-    const links = ['collections', 'Men', 'Women', 'About', 'Contact'];
+    // const links = ['collections', 'Men', 'Women', 'About', 'Contact'];
+
+    const [link, setLink] = useState(false);
+
+    const handleActiveLink = () => {
+         document.getElementsByClassName("").classList.style.remove('.nav-active-one');
+    }
     
     return (
         <div className='flex-nav'>
             <h1 className='logo'>sneakers</h1>
             <nav className='nav-list'>
                 <ul  >
-                {links.map((i)=> <a href='#' className='.nav-active' onClick='.nav-active' >{i}</a>  ) }
+                {/* {links.map((i)=> <a href='#' className='.nav-active' onClick='.nav-active' >{i}</a>  ) } */}
 
-                    {/* <a href="#" className='.nav-active ' >Collections</a>
-                    <a href="#" className='' >Men</a>
-                    <a href="#" className='' >Women</a>
-                    <a href="#" className='' >About</a>
-                    <a href="#" className='.' >Contact</a> */}
+                    <li href="#" onClick={handleActiveLink} className='.nav-active-one ' >Collections</li>
+                    <li href="#" className='.nav-active-two' >Men</li>
+                    <li href="#" className=".nav-men" >Women</li>
+                    <li href="#" className='' >About</li>
+                    <li href="#" className='' >Contact</li>
 
                     
                 </ul>

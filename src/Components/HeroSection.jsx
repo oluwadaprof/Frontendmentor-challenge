@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import HeroImage from "../images/image-product-1.jpg";
-import HeroImage1 from '../images/image-product-2.jpg';
-import HeroImage2 from '../images/image-product-3.jpg';
-import HeroImage3 from '../images/image-product-4.jpg';
+// import HeroImage1 from '../images/image-product-2.jpg';
+// import HeroImage2 from '../images/image-product-3.jpg';
+// import HeroImage3 from '../images/image-product-4.jpg';
 import SubImageOne from '../images/image-product-1-thumbnail.jpg';
 import SubImageTwo from '../images/image-product-2-thumbnail.jpg';
 import SubImageThree from '../images/image-product-3-thumbnail.jpg';
